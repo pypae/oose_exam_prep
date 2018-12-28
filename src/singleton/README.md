@@ -1,1 +1,2 @@
-TODO
+__Gegeben: FileLogger und Service, wobei Service einen FileLogger initialisiert und dann an diversen Stellen benutzt. Da man aber nicht weiss, ob FileLogger noch null ist, wird bei jeder Benutzung, ein null-check durchgeführt. Wie kann man das vermeiden?__
+*Aus Prüfungsprotokoll 2014*

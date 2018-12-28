@@ -1,6 +1,8 @@
 import composite.FinancialInstrument;
 import composite.Portfolio;
 import composite.PricedComponent;
+import singleton.FileLogger;
+import singleton.Service;
 import strategy.Panel;
 import strategy.RedBackground;
 import strategy.YellowBackground;
@@ -11,6 +13,14 @@ public class Main {
     public static void main(String[] args) {
         test_composite();
         test_strategy();
+        test_singleton();
+    }
+
+    private static void test_singleton(){
+        Service myService = new Service();
+        FileLogger l1 = myService.do_something_and_log();
+        FileLogger l2 = myService.do_something_else_and_log();
+        System.out.println(l1.equals(l2));
     }
 
     private static void test_composite(){
