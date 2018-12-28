@@ -81,7 +81,27 @@ TODO
 __6. Welches sind die Nachteile der Instanzerzeugung durch Konstruktoraufruf?  Welches die Vorteile? Welche Alternativen (abstrahierte Konstruktorenaufrufe) gibt es?__
 *Aus Prüfungsprotokoll 2016*
 
-TODO
+Vorteile: 
+- Einfache Implementierung für kleine Anzahl Instanz-Variablen (0-2)
+- Default Konstruktor
+- Kann in Subklasse einfach überschrieben werden.
+
+Nachteile:
+- Kann in Subklasse überschrieben werden, ohne Aufruf von Superkonstruktor. 
+- Jeder Konstruktor-Aufruf erstellt immer ein Objekt (vs Singleton/Factory)
+- Wird unübersichtlich für mehrere Parameter
+- Default parameter sind nicht ersichtlich (vs Builder)
+
+Alternativen:
+- Factory Method
+  - Eine/Mehrere statische Methoden, die ein Objekt der Klasse zurück geben.
+  - Vorteile: Deskriptiver Name, Überschreibung kann verhindert werden, Kann Subtyp zurückgeben.
+- Builder Pattern + (Fluent API)
+  - Viel flexibler und expressiver
+  - Default Instanzvariablen können ersichtlich gemacht werden
+  - Hinzufügen von neuen optionalen Parametern ist einfach
+  - Validierung der Objektkonstruktion
+  - Nachteil: Verbose Implementation
 
 __7. Was bedeutet Faktorisierung? Wie kann Faktorisierung erreicht werden (2 Beispiele)? Wie hängt Faktorisierung zusammen mit Softwaremaintenance?__
 *Aus Prüfungsprotokoll 2015*
