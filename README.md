@@ -42,3 +42,43 @@ Komposition
 
 __3. Java erlaubt die Zuweisung von String[] and Object[]. Ist String[] ein Subtyp von Object[]? Wie nennt man dieses Konzept? Zeige ein Beispiel, wo eine solche Zuweisung zu Problemen führen kann. Wie heisst das Gegenprinzip?__
 *Aus Prüfungsprotokoll 2016*
+
+TODO
+
+__4. Erklären Sie die SOLID Prinzipien.__
+*Aus Prüfungsprotokoll 2016*
+
+TODO
+
+__5. Was ist Dependency Injection? Welches Problem wird durch Dependency Injection gelöst und wie wird es gelöst?__
+*Aus Prüfungsprotokoll 2016*
+
+TODO
+
+__6. Welches sind die Nachteile der Instanzerzeugung durch Konstruktoraufruf?  Welches die Vorteile? Welche Alternativen (abstrahierte Konstruktorenaufrufe) gibt es?__
+*Aus Prüfungsprotokoll 2016*
+
+TODO
+
+__7. Was bedeutet Faktorisierung? Wie kann Faktorisierung erreicht werden (2 Beispiele)? Wie hängt Faktorisierung zusammen mit Softwaremaintenance?__
+*Aus Prüfungsprotokoll 2015*
+
+TODO
+
+__8. Erkläre das Principle of Substitutability in Relation zu den Begriffen Subclass und Subtype.__
+*Aus Prüfungsprotokoll 2015*
+
+TODO
+
+__9. PECS, was bedeutet dieses Akronym? Erläutere anhand von Codebeispielen (Java Code) die Problematik und zeige die Lösung auf.__
+*Aus Prüfungsprotokoll 2015*
+
+TODO
+
+__10.Wie könnte man SWITCH Anweisungen mit einem Objekt-orientierten Ansatz ersetzten?__
+*Aus Prüfungsprotokoll 2013*
+
+TODO
+
+
+
