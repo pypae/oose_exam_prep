@@ -1,4 +1,5 @@
-#### Verbessern sie das untenstehende Design bzw. die Implementierung. Welches Entwurfsmuster können sie dazu verwenden?
+__Verbessern sie das untenstehende Design bzw. die Implementierung. Welches Entwurfsmuster können sie dazu verwenden?__
+*Aus Prüfungsvorbereitung 2018*
 
 ```java
 public class composite.FinancialInstrument {
