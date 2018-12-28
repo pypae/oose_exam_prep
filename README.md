@@ -140,7 +140,47 @@ Subklassen können das Prinzip verletzen:
 __9. PECS, was bedeutet dieses Akronym? Erläutere anhand von Codebeispielen (Java Code) die Problematik und zeige die Lösung auf.__
 *Aus Prüfungsprotokoll 2015*
 
-TODO
+PECS: producer extend, consumer super.
+
+Problematik erklärt anhand eines generischen Stacks des Typen `T`:
+
+```java
+class Stack<T>{
+    //...
+    public pop(){
+        
+    }
+    
+    public void push(T item){
+        
+    }
+}
+```
+
+Verwendung (angenommen int erbt von Number):
+```java
+Stack<Number> numberStack = new Stack<Number>;
+Number myNumber = new Number(1);
+numberStack.push(myNumber); // OK
+numberStack.push(1); // fails
+
+Object alsoMyNumber = myNumber;
+numberStack.pop(myNumber) // OK
+numberStack.pop(alsoMyNumber) // fails
+```
+Fix dafür "producer" `push` extends, "consumer" `pop` super:
+```java
+class Stack<T>{
+    //...
+    public void pop(? super T item){
+        
+    }
+    
+    public void push(? extends T item){
+        
+    }
+}
+```
 
 __10. Wie könnte man SWITCH Anweisungen mit einem Objekt-orientierten Ansatz ersetzten?__
 *Aus Prüfungsprotokoll 2013*
