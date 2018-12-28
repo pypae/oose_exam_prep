@@ -48,7 +48,30 @@ TODO
 __4. Erklären Sie die SOLID Prinzipien.__
 *Aus Prüfungsprotokoll 2016*
 
-TODO
+- **S**ingle Resoponsibility Prinzip
+  - Da je grösser der Implementationsumfang einer Klasser, desto höher die Wahrscheinlichkeit, dass sie angepasst werden muss. Diese Änderungen können ungewollte Side-Effects haben.
+  - Änderung an einer Klasse sollten genau eine einzige Absicht haben.
+  - Führt zu hoher Kohäsion
+  - Falls Klasse nicht in kleinere Teile aufgebrochen werden kann: ISP
+- **O**pen Closed Prinzip
+  - Jede Implementationseinheit kann erweitert werden (open), ohne sie zu verändern (closed). 
+  - Dadurch kann die Implementation an einen neuen Kontext angepasst werden.
+  - Zugang zum Quellcode ist für die Anpassung nicht nötig.
+  - Zur Umsetzung des OCP ist Abstraktion zwingend nötig.
+- **L**iskov Substitution Prinzip
+  - Subtypen müssen mindesrtens alle Methoden des Basistypen implementieren.
+  - Preconditions dürfen nicht enger/genauer definiert werden.
+  - Postconditions dürfen nicht offener definiert werden.
+  - Exceptions dürfen nur geworfen werden, wenn sie von einer Exception erben, die in der Basis Implementation geworfen wird.
+  - Werden die obigen Punkte eingehalten, können Subklassen ohne Veränderung verwendet werden.
+  - Kovarianz als Gegenbeispiel
+- **I**nterface Segregation Prinzip
+  - Anwender sollten keine Abhängigkeiten zu unbenutzten Interfaces haben
+  - Daher Interfaces klein und Client-Spezifisch halten.
+- **D**ependency Inversion Prinzip
+  - Abstraktionen sollten nicht von konkreten Implementationen abhängen.
+  - Änderungen in low-level (spezifischen) Strukturen sollten keine Auswirkungen auf high-level (allgemeine) Strukturen haben.
+  - Low-level Strukturen sollten austauschbar sein.
 
 __5. Was ist Dependency Injection? Welches Problem wird durch Dependency Injection gelöst und wie wird es gelöst?__
 *Aus Prüfungsprotokoll 2016*
@@ -89,7 +112,12 @@ __12. Substitution Principle erklären & Verknüpfung zu Subtypen und Subklassen
 *Aus Prüfungsprotokoll 2017*
 
 TODO
-Ref 
+
+
+__13. Erläutern Sie das Law of Demeter.__
+*Hinzugefügt von Patrick*
+
+TODO
 
 ## Design Patterns
 Die praktischen Aufgaben sind in Module aufgeteilt und nach Pattern sortiert.
