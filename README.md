@@ -106,8 +106,19 @@ Alternativen:
 __7. Was bedeutet Faktorisierung? Wie kann Faktorisierung erreicht werden (2 Beispiele)? Wie hängt Faktorisierung zusammen mit Softwaremaintenance?__
 *Aus Prüfungsprotokoll 2015*
 
-TODO
+Faktorisierung: Jeder "Fakt" (Interfaces, Klassen, Methoden, Codesnippet) kommt genau einmal vor. (DRY - Don't Repeat Yourself)
 
+- Kann beispielsweise durch Abstrakte Klassen oder Interfaces mit default Methoden erreicht werden. 
+Diese implementieren gemeinsame Funktionalität der Subklassen an einem Ort.
+
+- Template Methoden können wiederholten Code reduzieren.
+
+Zusammenhang mit Software Maintenance:
+Wenn jede bestimmte Funktionalität nur an einem Ort implementiert ist, kann diese leicht angepasst werden. 
+Alle Teile des Systems, welche diese Funktionalität benötigen, können gleich weiter verwendet werden.
+Falls gleiche Funktionalität an mehreren Orten implementiert ist, muss eine Änderung an all diesen Orten durchgeführt werden,
+was die Wartung eines solchen Systems erschwert.
+ 
 __8. Erkläre das Principle of Substitutability in Relation zu den Begriffen Subclass und Subtype.__
 *Aus Prüfungsprotokoll 2015*
 
