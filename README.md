@@ -122,7 +122,20 @@ was die Wartung eines solchen Systems erschwert.
 __8. Erkläre das Principle of Substitutability in Relation zu den Begriffen Subclass und Subtype.__
 *Aus Prüfungsprotokoll 2015*
 
-TODO
+LSK:
+- Subtypen müssen mindesrtens alle Methoden des Basistypen implementieren.
+- Preconditions dürfen nicht enger/genauer definiert werden.
+- Postconditions dürfen nicht offener definiert werden.
+- Exceptions dürfen nur geworfen werden, wenn sie von einer Exception erben, die in der Basis Implementation geworfen wird.
+
+Subtypen müssen das LSK einhalten:
+- Dadurch wird Polymorphismus ermöglicht
+- TODO
+
+Subklassen können das Prinzip verletzen:
+- Implementation-Inheritance für reines Code-Sharing
+- Muss sich nicht an Signatur und Conditions der Superklasse halten.
+- Sollte meist durch Komposition anstatt Vererbung ersetzt werden.
 
 __9. PECS, was bedeutet dieses Akronym? Erläutere anhand von Codebeispielen (Java Code) die Problematik und zeige die Lösung auf.__
 *Aus Prüfungsprotokoll 2015*
