@@ -4,6 +4,11 @@ package singleton;
 public class FileLogger {
     private static FileLogger logger = new FileLogger();
 
+    // To hide default constructor
+    private FileLogger(){
+
+    }
+
     public static FileLogger getDefault() {
         return logger;
     }
