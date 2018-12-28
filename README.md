@@ -75,10 +75,20 @@ __9. PECS, was bedeutet dieses Akronym? Erläutere anhand von Codebeispielen (Ja
 
 TODO
 
-__10.Wie könnte man SWITCH Anweisungen mit einem Objekt-orientierten Ansatz ersetzten?__
+__10. Wie könnte man SWITCH Anweisungen mit einem Objekt-orientierten Ansatz ersetzten?__
 *Aus Prüfungsprotokoll 2013*
 
 TODO
 
+__11. Erkläre Stub__
+*Aus Prüfungsprotokoll 2017*
+
+TODO
+
+__12. Substitution Principle erklären & Verknüpfung zu Subtypen und Subklassen.__
+*Aus Prüfungsprotokoll 2017*
+
+TODO
+Ref SOLID
 
 
