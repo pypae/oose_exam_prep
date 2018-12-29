@@ -226,7 +226,18 @@ Dieses Pattern macht die verschiedenen Algorithmen einfach austauschbar ohne ein
 __11. Erkläre Stub__
 *Aus Prüfungsprotokoll 2017*
 
-TODO
+- Ahmt das Verhalten einer echten Klasse nach
+- Gibt vorgefertigte Antworten für Anfragen zurück. (Nur soweit vom Compintent under Test benötigt.)
+
+(Unterschied zu Mock)
+- Verifizierung der Tests mit Hilfe des States.
+  - Nur finaler State wird betrachtet
+  - Möglicherweise zusätzliche Methoden zum State access benötigz.
+- Ein Stub kann anstatt einer tatsächlichen Abhängigkeit verwendet werden wenn:
+  - Viele Kontextabhängigkeiten bestehen
+  - Die echte Klasse langsam ist
+  - Der state der Klasse nicht zugänglich ist. (Anstatt reflection)
+- Stubs sind robuster als Mocks.
 
 __12. Substitution Principle erklären & Verknüpfung zu Subtypen und Subklassen.__
 *Aus Prüfungsprotokoll 2017*
