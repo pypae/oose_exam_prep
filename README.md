@@ -247,18 +247,18 @@ TODO
 
 ## Design Patterns
 Die praktischen Aufgaben sind in Module aufgeteilt und nach Pattern sortiert.
-- __[Singleton](src/singleton/README.md)__
-- __[Factory](src/factory/README.md)__
-- __[Abstract Factory](src/abstractfactory/README.md)__
-- __[Builder](src/builder/README.md)__
-- __[Adapter](src/adapter/README.md)__
-- __[Bridge](src/bridge/README.md)__
-- __[Decorator](src/decorator/README.md)__
-- __[Observer](src/observer/README.md)__
+- __[Singleton](src/singleton)__
+- __[Factory](src/factory)__
+- __[Abstract Factory](src/abstractfactory)__
+- __[Builder](src/builder)__
+- __[Adapter](src/adapter)__
+- __[Bridge](src/bridge)__
+- __[Decorator](src/decorator)__
+- __[Observer](src/observer)__
 
 
-- __[Composite Pattern](src/composite/README.md)__
-- __[Strategy Pattern](src/strategy/README.md)__
+- __[Composite](src/composite)__
+- __[Strategy](src/strategy)__
 
 
 
