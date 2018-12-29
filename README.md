@@ -243,7 +243,19 @@ __11. Erkläre Stub__
 __12. Erläutern Sie das Law of Demeter.__
 *Hinzugefügt von Patrick*
 
-TODO
+Das Law of Demeter ist eine anzahl an Faustregeln, um lose Kopplung sicherzustellen.
+
+- Eine Methode m eines Objektes o sollte nur Methoden eines der folgenden Objekte aufrufen:
+  - o selbst
+  - m’s Parameter
+  - Alle in m erzeugten Objekte
+  - o’s direkten Komponenten
+  - Globale variablen
+- Objekte, die von Methoden zurückgegeben werden, sollten vermieden werden.
+  - Bspw. getters
+- Keine Ketten an . verwenden (in Java)
+  - Bspw. currentShipment.getItems()[0].getManufacturer().getAddress().getEmail()
+  - Ausnahme: FluentApi
 
 ## Design Patterns
 Die praktischen Aufgaben sind in Module aufgeteilt und nach Pattern sortiert.
