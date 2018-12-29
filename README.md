@@ -20,7 +20,7 @@ __2. Diskutieren sie die Vor- und Nachteile von mehrfacher Vererbung. Welche Alt
 
 
 Vorteile:
-?
+TODO
 
 Nachteile:
 - Komplexe Programmiersprache benötigt (Semantik, Synatx)
@@ -75,8 +75,15 @@ __4. Erklären Sie die SOLID Prinzipien.__
 
 __5. Was ist Dependency Injection? Welches Problem wird durch Dependency Injection gelöst und wie wird es gelöst?__
 *Aus Prüfungsprotokoll 2016*
+Dependency Injection erlaubt die Spezifikation von Implementationen und deren Dependencies (Abhängigkeiten). 
+Dabei werden die Abhängigkeiten via Konstruktor, Setter oder ein Interface "injected".
 
-TODO
+Dependency Injection löst das Problem der Konfiguration von Abhängigkeiten. 
+Für die Produktionsumgebung und die Testumgbung wird beipielsweise ein anderer Logger benötigt. 
+Ein spezifischer Logger kann je nach Kontext für alle Klassen die ihn benötigen bereitgestellt werden.
+Gute Dependency Injection Frameworks erlauben auch die Anzahl Instanzen der Dependencies (bspw. Logger) zu bestimmen. 
+(Eine pro Request, per Session etc.)
+
 
 __6. Welches sind die Nachteile der Instanzerzeugung durch Konstruktoraufruf?  Welches die Vorteile? Welche Alternativen (abstrahierte Konstruktorenaufrufe) gibt es?__
 *Aus Prüfungsprotokoll 2016*
@@ -185,7 +192,11 @@ class Stack<T>{
 __10. Wie könnte man SWITCH Anweisungen mit einem Objekt-orientierten Ansatz ersetzten?__
 *Aus Prüfungsprotokoll 2013*
 
-TODO
+Mithilfe des [Strategy Patterns](src/strategy)
+- Das Strategy Pattern definiert eine Familie an Algorithmen. 
+Jeder zu dieser Familie gehörende Algorithmus wird einzeln Implementiert. 
+Dieses Pattern macht die verschiedenen Algorithmen einfach austauschbar ohne eine Änderung des Clients zu verlangen.
+
 
 __11. Erkläre Stub__
 *Aus Prüfungsprotokoll 2017*
