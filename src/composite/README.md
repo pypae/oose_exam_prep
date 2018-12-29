@@ -50,3 +50,7 @@ public class Pricer {
     }
 }
 ```
+
+Structure
+
+![structure](structure.PNG "Structure")

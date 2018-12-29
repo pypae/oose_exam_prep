@@ -6,6 +6,7 @@ import java.util.NoSuchElementException;
 // Adapter
 public class PeekIterator<T> implements Peekerator<T>{
 
+    // Adaptee
     // iterator.add() is only possible with a ListIterator.
     // idk how to implement with a basic Iterator, because it is unordered and does not support previous()
     private ListIterator<? extends T> iterator;

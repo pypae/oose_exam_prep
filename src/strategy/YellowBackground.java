@@ -1,5 +1,6 @@
 package strategy;
 
+// Concrete Strategy
 public class YellowBackground implements DrawingStrategy{
 
     @Override

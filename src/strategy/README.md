@@ -4,3 +4,6 @@ von Panel erbende Klasse implementieren.
 Wie kann man das mit einem Pattern so ändern, dass eine neue Klasse nicht mehr nötig ist?__
 *Aus Prüfungsprotokoll 2015*
 
+Structure
+
+![structure](structure.PNG "Structure")

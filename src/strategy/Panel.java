@@ -1,5 +1,6 @@
 package strategy;
 
+// Context
 public class Panel {
     private DrawingStrategy drawingStrategy;
 
