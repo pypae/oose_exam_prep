@@ -99,6 +99,7 @@ __4. Erklären Sie die SOLID Prinzipien.__
 
 __5. Was ist Dependency Injection? Welches Problem wird durch Dependency Injection gelöst und wie wird es gelöst?__
 *Aus Prüfungsprotokoll 2016*
+
 Dependency Injection erlaubt die Spezifikation von Implementationen und deren Dependencies (Abhängigkeiten). 
 Dabei werden die Abhängigkeiten via Konstruktor, Setter oder ein Interface "injected".
 
@@ -178,7 +179,7 @@ Problematik erklärt anhand eines generischen Stacks des Typen `T`:
 ```java
 class Stack<T>{
     //...
-    public pop(){
+    public pop(T item){
         
     }
     
