@@ -1,3 +1,5 @@
+import adapter.PeekIterator;
+import adapter.Peekerator;
 import composite.FinancialInstrument;
 import composite.Portfolio;
 import composite.PricedComponent;
@@ -9,6 +11,7 @@ import strategy.YellowBackground;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ListIterator;
 
 public class Main {
     public static void main(String[] args) {
@@ -16,6 +19,23 @@ public class Main {
         test_composite();
         test_strategy();
         test_singleton();
+        test_adapter();
+    }
+
+    private static void test_adapter() {
+        List<Integer> myList = new ArrayList<>() {{
+            add(1);
+            add(2);
+            add(3);
+        }};
+
+        ListIterator<Integer> iterator = myList.listIterator();
+        Peekerator<Integer> peekerator = new PeekIterator<Integer>(iterator);
+
+        System.out.println(peekerator.peek()); // 1
+        System.out.println(iterator.next()); // 1
+        System.out.println(peekerator.peek()); // 2
+
     }
 
     private static void test_covariance(){
