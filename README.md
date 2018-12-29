@@ -239,13 +239,8 @@ __11. Erkläre Stub__
   - Der state der Klasse nicht zugänglich ist. (Anstatt reflection)
 - Stubs sind robuster als Mocks.
 
-__12. Substitution Principle erklären & Verknüpfung zu Subtypen und Subklassen.__
-*Aus Prüfungsprotokoll 2017*
 
-TODO
-
-
-__13. Erläutern Sie das Law of Demeter.__
+__12. Erläutern Sie das Law of Demeter.__
 *Hinzugefügt von Patrick*
 
 TODO
