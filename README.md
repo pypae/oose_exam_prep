@@ -43,8 +43,32 @@ Komposition
 __3. Java erlaubt die Zuweisung von String[] and Object[]. Ist String[] ein Subtyp von Object[]? Wie nennt man dieses Konzept? Zeige ein Beispiel, wo eine solche Zuweisung zu Problemen führen kann. Wie heisst das Gegenprinzip?__
 *Aus Prüfungsprotokoll 2016*
 
-TODO
+In Java sind Arrays Kovariant, das heisst die Zuweisung von String Arrays zu Object Arrays wie im untenstehenden Snippet ist erlaubt:
 
+```java
+Object[] foo = new String[2];
+```
+
+Das heisst aber nicht, dass `String[]` ein Subtyp von `Object[]` ist.
+
+```java
+cls = String[].class.getSuperclass(); // java.lang.Object
+```
+
+```java
+// Das klappt komischerweise..
+Object[].class.isAssignableFrom(String[].class); // true
+new String[0] instanceof Object[]; //true
+```
+
+Ein Problem entsteht, wenn im ersten Beispiel versucht wird ein Object zum String Array hinzufügen:
+
+```java
+Object[] foo = new String[2];
+foo[0] = new Object(); // ArrayStoreException at runtime
+```
+
+Das Gegenprinzip heisst Kontravarianz; In einer überschriebenen Methode wird ein Parameter offener deklariert.
 __4. Erklären Sie die SOLID Prinzipien.__
 *Aus Prüfungsprotokoll 2016*
 

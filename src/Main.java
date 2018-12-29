@@ -8,12 +8,20 @@ import strategy.RedBackground;
 import strategy.YellowBackground;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
+        test_covariance();
         test_composite();
         test_strategy();
         test_singleton();
+    }
+
+    private static void test_covariance(){
+        System.out.println(Object[].class.isAssignableFrom(String[].class));
+        System.out.println(new String[0] instanceof Object[]);
+        System.out.println(String[].class.getSuperclass());
     }
 
     private static void test_singleton(){
