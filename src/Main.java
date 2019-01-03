@@ -7,6 +7,10 @@ import adapter.Peekerator;
 import composite.FinancialInstrument;
 import composite.Portfolio;
 import composite.PricedComponent;
+import factory.AbstrakterHersteller;
+import factory.AbstraktesFahrzeug;
+import factory.BMW;
+import factory.Volkswagen;
 import singleton.FileLogger;
 import singleton.Service;
 import strategy.Panel;
@@ -25,6 +29,7 @@ public class Main {
         test_singleton();
         test_adapter();
         test_abstract_factory();
+        test_factory();
     }
 
     private static void test_adapter() {
@@ -86,6 +91,32 @@ public class Main {
         testStore = new ChicagoPizzaStore();
         pizza = testStore.orderPizza("cheese");
         System.out.println("Joel from Texas ordered a " + pizza.getName() + "\n");
+    }
+
+    private static void test_factory(){
+        /*
+         * Hersteller Volkswagen und BMW instanziieren
+         */
+        AbstrakterHersteller vw = new Volkswagen();
+        AbstrakterHersteller bmw = new BMW();
+
+        /*
+         * Ausgabe der Fahrzeuge eines jeden Herstellers
+         */
+        for (AbstraktesFahrzeug fahrzeug : vw.getFahrzeuge()) {
+            System.out.println(
+                    fahrzeug.getHersteller() + " " +
+                            fahrzeug.getModell() + ", " +
+                            fahrzeug.getKw() + " KW");
+        }
+
+        for (AbstraktesFahrzeug fahrzeug : bmw.getFahrzeuge()) {
+            System.out.println(
+                    fahrzeug.getHersteller() + " " +
+                            fahrzeug.getModell() + ", " +
+                            fahrzeug.getKw() + " KW");
+        }
+
     }
 
 
