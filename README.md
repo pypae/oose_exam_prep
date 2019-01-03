@@ -276,6 +276,7 @@ Das Law of Demeter ist eine anzahl an Faustregeln, um lose Kopplung sicherzustel
   
  __13. Vergleichen Sie Inheritance und Compositions miteinander.__
  *Hinzugefügt von William und Andy*
+ 
  Inheritance:
  - Protokol wird erweitert (Restriktionen sind nicht erlaubt --> Widerspricht der Suptypisierung)
  - Subtyping (is-a-relationship)
@@ -286,19 +287,25 @@ Das Law of Demeter ist eine anzahl an Faustregeln, um lose Kopplung sicherzustel
  - Komposition ist einne has-a-relationship
  - Implementierung ist austauschbar
  
- __14. Für was braucht man generische Klassen?.__
+ __14. Für was braucht man generische Klassen?__ 
+ *Hinzugefügt von William und Andy*
+ 
  → erlaubt mir über den typ zu abstrahieren, mit welcher man arbeitet. 
  - lesbarkeit --> einfacher nachzuvollziehen
  - automatische statische Typeüberprüfung möglich --> nicht erst in Runtime
  - Autoboxing/ -unboxing komplementiert Generics Funktion gut.
  - Kombination von Veerbung und Generik ist erstrebenswert.
  
-__15. Wozu braucht man aspekt-orientiere Programmierung?.__
+__15. Wozu braucht man aspekt-orientiere Programmierung?__ 
+*Hinzugefügt von William und Andy*
+
 Bei objektorientierter Programmierung funktioniert die Faktorisierung nur entlang der Vererbung. --> Man muss von einer Klasse erben um davon zu faktorisieren. Wenn dies nicht möglich ist wird der Code dupliziert.
 
 ==> Aspketorientiertes Programmieren: Ein Aspekt (Methoden, Klassen, Instanzen)ankleben --> muss nicht erben
 
-__16. Für was braucht man fluent api?.__
+__16. Für was braucht man fluent api?__ 
+*Hinzugefügt von William und Andy*
+
 - Keine unmengen an Konstruktoren nötig für unteschiedliche Klassen-Instanzierung.
 - FluentAPI arbeitet nicht mit normalen Gettern und Settern, sondern returnieren das Klassen-Object ==> somit ist ein Verkettung der Funktionen möglich.
 
