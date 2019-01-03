@@ -205,7 +205,6 @@ public class Main {
 
         Beverage beverage2 = new DarkRoast();
         beverage2 = new Mocha(beverage2);
-        beverage2 = new Mocha(beverage2);
         beverage2 = new Whip(beverage2);
 
         printOutOrder(beverage2);
