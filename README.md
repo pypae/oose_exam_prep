@@ -101,9 +101,8 @@ __4. Erklären Sie die SOLID Prinzipien.__
   - Änderungen in low-level (spezifischen) Strukturen sollten keine Auswirkungen auf high-level (allgemeine) Strukturen haben.
   - Low-level Strukturen sollten austauschbar sein.
 
-__5.  * Was ist Dependency Injection? Welches Problem wird durch Dependency Injection gelöst und wie wird es gelöst?__
+__5. Was ist Dependency Injection? Welches Problem wird durch Dependency Injection gelöst und wie wird es gelöst?__
 *Aus Prüfungsprotokoll 2016*
-
 
 Dependency Injection erlaubt die Spezifikation von Implementationen und deren Dependencies (Abhängigkeiten). 
 Dabei werden die Abhängigkeiten via Konstruktor, Setter oder ein Interface "injected".
@@ -239,10 +238,10 @@ Dieses Pattern macht die verschiedenen Algorithmen einfach austauschbar ohne ein
 __11. Erkläre Stub__
 *Aus Prüfungsprotokoll 2017*
 
-### Gemeinsamkeiten Stub und Mocks
+#### Gemeinsamkeiten Stub und Mocks
 - Beide imitieren das Verhalten einer realen Klasse im Rahmen von Testing
-- Retournieren vorgefertigte, statische Antworten --> nur benötigte 'Component under Test'
-### Unterschiede Stub und Mocks
+- Retournieren vorgefertigte, statische Antworten --> nur benötigte 'Component under Test' <br/>
+#### Unterschiede Stub und Mocks
 #### Stubs
 - Verifizierung der Tests mit Hilfe des States.
   - Nur finaler State wird betrachtet
@@ -251,8 +250,8 @@ __11. Erkläre Stub__
   - Viele Kontextabhängigkeiten bestehen
   - Die echte Klasse langsam ist (z.B. bei Datenbankzugriffen)
   - Der state der Klasse nicht zugänglich ist. (Anstatt reflection)
-- Stubs sind robuster als Mocks.  
- #### Mocks
+- Stubs sind robuster als Mocks. <br/>
+#### Mocks
  - Verifizierung der Tests mit Hilfe des Verhaltens.
   - Interaktion mit Komponenten wird aufgezeichnet 
  - Gibt vorgefertigte Antworten für Anfragen zurück. (Nur soweit vom Compintent under Test benötigt.)
