@@ -4,6 +4,7 @@ import abstractfactory.PizzaStore;
 import abstractfactory.pizza.Pizza;
 import adapter.PeekIterator;
 import adapter.Peekerator;
+import builder.Person;
 import composite.FinancialInstrument;
 import composite.Portfolio;
 import composite.PricedComponent;
@@ -13,6 +14,7 @@ import strategy.Panel;
 import strategy.RedBackground;
 import strategy.YellowBackground;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ListIterator;
@@ -25,6 +27,7 @@ public class Main {
         test_singleton();
         test_adapter();
         test_abstract_factory();
+        test_builder();
     }
 
     private static void test_adapter() {
@@ -89,4 +92,13 @@ public class Main {
     }
 
 
+
+    private static void test_builder(){
+        Person person = new Person.Builder("Ada", "Lovelace", Person.Sex.FEMALE)
+                .profession("mathematician")
+                .birthday(LocalDate.of(1815, 12, 10))
+                .build();
+
+        System.out.println(person.toString());
+    }
 }
