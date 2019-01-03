@@ -53,12 +53,16 @@ public class Main {
     }
 
     private static void test_covariance(){
+        System.out.println("\n"+"Covariance:");
+
         System.out.println(Object[].class.isAssignableFrom(String[].class));
         System.out.println(new String[0] instanceof Object[]);
         System.out.println(String[].class.getSuperclass());
     }
 
     private static void test_singleton(){
+        System.out.println("\n"+"Singleton:");
+
         Service myService = new Service();
         FileLogger l1 = myService.do_something_and_log();
         FileLogger l2 = myService.do_something_else_and_log();
@@ -66,6 +70,8 @@ public class Main {
     }
 
     private static void test_composite(){
+        System.out.println("\n"+"Composite:");
+
         PricedComponent myInstrument = new FinancialInstrument();
         System.out.println(myInstrument.getPrice());
 
@@ -79,6 +85,8 @@ public class Main {
     }
 
     private static void test_strategy(){
+        System.out.println("\n"+"Strategy:");
+
         Panel myPanel = new Panel();
 
         myPanel.setDrawingStrategy(new RedBackground());
@@ -89,6 +97,8 @@ public class Main {
     }
 
     private static void test_abstract_factory(){
+        System.out.println("\n"+"Abstract Factory:");
+
         PizzaStore testStore = new NYPizzaStore();
         Pizza pizza = testStore.orderPizza("cheese");
         System.out.println("Ethan from New York ordered a " + pizza.getName() + "\n");
@@ -99,6 +109,7 @@ public class Main {
     }
 
     private static void test_factory(){
+        System.out.println("\n"+"Factory:");
         /*
          * Hersteller Volkswagen und BMW instanziieren
          */
@@ -124,7 +135,7 @@ public class Main {
     }
 
     private static void test_bridge(){
-        System.out.println();
+        System.out.println("\n"+"Bridge:");
         Shape tri = new Triangle(new RedColor());
         tri.applyColor();
 
@@ -133,6 +144,7 @@ public class Main {
     }
 
     private static void test_builder(){
+        System.out.println("\n"+"Builder:");
         Person person = new Person.Builder("Ada", "Lovelace", Person.Sex.FEMALE)
                 .profession("mathematician")
                 .birthday(LocalDate.of(1815, 12, 10))
