@@ -4,6 +4,7 @@ import abstractfactory.PizzaStore;
 import abstractfactory.pizza.Pizza;
 import adapter.PeekIterator;
 import adapter.Peekerator;
+import bridge.*;
 import builder.Person;
 import composite.FinancialInstrument;
 import composite.Portfolio;
@@ -36,6 +37,7 @@ public class Main {
         test_adapter();
         test_abstract_factory();
         test_factory();
+        test_bridge();
         test_builder();
         test_observer();
     }
@@ -55,20 +57,29 @@ public class Main {
 //        System.out.println(peekerator.peek()); // 2
     }
 
-    private static void test_covariance() {
+    private static void test_covariance(){
+        System.out.println("\n########################################################");
+        System.out.println("Covariance: \n");
+
         System.out.println(Object[].class.isAssignableFrom(String[].class));
         System.out.println(new String[0] instanceof Object[]);
         System.out.println(String[].class.getSuperclass());
     }
 
-    private static void test_singleton() {
+    private static void test_singleton(){
+        System.out.println("\n########################################################");
+        System.out.println("Singleton: \n");
+
         Service myService = new Service();
         FileLogger l1 = myService.do_something_and_log();
         FileLogger l2 = myService.do_something_else_and_log();
         System.out.println(l1.equals(l2));
     }
 
-    private static void test_composite() {
+    private static void test_composite(){
+        System.out.println("\n########################################################");
+        System.out.println("Composite: \n");
+
         PricedComponent myInstrument = new FinancialInstrument();
         System.out.println(myInstrument.getPrice());
 
@@ -81,7 +92,10 @@ public class Main {
         System.out.println(myPortfolio.getPrice());
     }
 
-    private static void test_strategy() {
+    private static void test_strategy(){
+        System.out.println("\n########################################################");
+        System.out.println("Strategy: \n");
+
         Panel myPanel = new Panel();
 
         myPanel.setDrawingStrategy(new RedBackground());
@@ -91,7 +105,10 @@ public class Main {
         myPanel.drawBackground();
     }
 
-    private static void test_abstract_factory() {
+    private static void test_abstract_factory(){
+        System.out.println("\n########################################################");
+        System.out.println("Abstract Factory: \n");
+
         PizzaStore testStore = new NYPizzaStore();
         Pizza pizza = testStore.orderPizza("cheese");
         System.out.println("Ethan from New York ordered a " + pizza.getName() + "\n");
@@ -101,7 +118,9 @@ public class Main {
         System.out.println("Joel from Texas ordered a " + pizza.getName() + "\n");
     }
 
-    private static void test_factory() {
+    private static void test_factory(){
+        System.out.println("\n########################################################");
+        System.out.println("Factory: \n");
         /*
          * Hersteller Volkswagen und BMW instanziieren
          */
@@ -127,7 +146,19 @@ public class Main {
 
     }
 
-    private static void test_builder() {
+    private static void test_bridge(){
+        System.out.println("\n########################################################");
+        System.out.println("Bridge: \n");
+        Shape tri = new Triangle(new RedColor());
+        tri.applyColor();
+
+        Shape pent = new Pentagon(new GreenColor());
+        pent.applyColor();
+    }
+
+    private static void test_builder(){
+        System.out.println("\n########################################################");
+        System.out.println("Builder: \n");
         Person person = new Person.Builder("Ada", "Lovelace", Person.Sex.FEMALE)
                 .profession("mathematician")
                 .birthday(LocalDate.of(1815, 12, 10))
@@ -137,6 +168,8 @@ public class Main {
     }
 
     private static void test_observer() {
+        System.out.println("\n########################################################");
+        System.out.println("Observer: \n");
         WeatherData weatherData = new WeatherData();
 
         // first observer
