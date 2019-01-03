@@ -33,6 +33,7 @@ Nachteile:
 Alternativen:
 
 Mixin Klassen
+- Klassen welche zusätzliches Funktionalität hinzufügt.
 - Definieren Funktionalität, aber keinen Status.
   - > Kann in Java 8 mit Interfaces mit default methoden umgesetzt werden
 - Subklassen erben von einer Basisklasse und 0..n Mixins
@@ -266,7 +267,7 @@ Das Law of Demeter ist eine anzahl an Faustregeln, um lose Kopplung sicherzustel
   - o selbst
   - m’s Parameter
   - Alle in m erzeugten Objekte
-  - o’s direkten Komponenten
+  - o’s direkten Komponenten --> Was heisst das genau?*
   - Globale variablen
 - Objekte, die von Methoden zurückgegeben werden, sollten vermieden werden.
   - Bspw. getters
@@ -285,6 +286,22 @@ Das Law of Demeter ist eine anzahl an Faustregeln, um lose Kopplung sicherzustel
  - Geringe übereinstimmung zwischen Basisklasse und Subklasse. --> Basisklasse ist nur ein kleiner Bestandteil der Subklasse
  - Komposition ist einne has-a-relationship
  - Implementierung ist austauschbar
+ 
+ __14. Für was braucht man generische Klassen?.__
+ → erlaubt mir über den typ zu abstrahieren, mit welcher man arbeitet. 
+ - lesbarkeit --> einfacher nachzuvollziehen
+ - automatische statische Typeüberprüfung möglich --> nicht erst in Runtime
+ - Autoboxing/ -unboxing komplementiert Generics Funktion gut.
+ - Kombination von Veerbung und Generik ist erstrebenswert.
+ 
+__15. Wozu braucht man aspekt-orientiere Programmierung?.__
+Bei objektorientierter Programmierung funktioniert die Faktorisierung nur entlang der Vererbung. --> Man muss von einer Klasse erben um davon zu faktorisieren. Wenn dies nicht möglich ist wird der Code dupliziert.
+
+==> Aspketorientiertes Programmieren: Ein Aspekt (Methoden, Klassen, Instanzen)ankleben --> muss nicht erben
+
+__16. Für was braucht man fluent api?.__
+- Keine unmengen an Konstruktoren nötig für unteschiedliche Klassen-Instanzierung.
+- FluentAPI arbeitet nicht mit normalen Gettern und Settern, sondern returnieren das Klassen-Object ==> somit ist ein Verkettung der Funktionen möglich.
 
 ## Design Patterns
 Die praktischen Aufgaben sind in Module aufgeteilt und nach Pattern sortiert.
