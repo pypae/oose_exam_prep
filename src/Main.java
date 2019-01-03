@@ -9,6 +9,13 @@ import builder.Person;
 import composite.FinancialInstrument;
 import composite.Portfolio;
 import composite.PricedComponent;
+import decorator.beverages.Beverage;
+import decorator.beverages.DarkRoast;
+import decorator.beverages.Espresso;
+import decorator.beverages.HouseBlend;
+import decorator.condimentDecorators.Mocha;
+import decorator.condimentDecorators.Soy;
+import decorator.condimentDecorators.Whip;
 import factory.AbstrakterHersteller;
 import factory.AbstraktesFahrzeug;
 import factory.BMW;
@@ -40,6 +47,7 @@ public class Main {
         test_bridge();
         test_builder();
         test_observer();
+        test_decorator();
     }
 
     private static void test_adapter() {
@@ -186,5 +194,33 @@ public class Main {
         ForecastDisplay forecastDisplay = new ForecastDisplay(weatherData);
         weatherData.showObserversLenght();
         weatherData.setMeasurements(78, 90, 29.2f);
+    }
+
+    private static void test_decorator() {
+        System.out.println("\n########################################################");
+        System.out.println("Decorator: \n");
+
+        Beverage beverage = new Espresso();
+        printOutOrder(beverage);
+
+        Beverage beverage2 = new DarkRoast();
+        beverage2 = new Mocha(beverage2);
+        beverage2 = new Mocha(beverage2);
+        beverage2 = new Whip(beverage2);
+
+        printOutOrder(beverage2);
+
+        Beverage beverage3 = new HouseBlend();
+        printOutOrder(beverage3);
+        beverage3 = new Soy(beverage3);
+        beverage3 = new Mocha(beverage3);
+        beverage3 = new Whip(beverage3);
+        printOutOrder(beverage3);
+
+
+    }
+
+    private static void printOutOrder(Beverage beverage) {
+        System.out.println(beverage.getDescription() + " $" + beverage.cost());
     }
 }
