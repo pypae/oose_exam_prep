@@ -12,6 +12,10 @@ import factory.AbstrakterHersteller;
 import factory.AbstraktesFahrzeug;
 import factory.BMW;
 import factory.Volkswagen;
+import observer.observer.CurrentConditionsDisplay;
+import observer.observer.ForecastDisplay;
+import observer.observer.StatisticsDisplay;
+import observer.subject.WeatherData;
 import singleton.FileLogger;
 import singleton.Service;
 import strategy.Panel;
@@ -33,6 +37,7 @@ public class Main {
         test_abstract_factory();
         test_factory();
         test_builder();
+        test_observer();
     }
 
     private static void test_adapter() {
@@ -50,33 +55,33 @@ public class Main {
 //        System.out.println(peekerator.peek()); // 2
     }
 
-    private static void test_covariance(){
+    private static void test_covariance() {
         System.out.println(Object[].class.isAssignableFrom(String[].class));
         System.out.println(new String[0] instanceof Object[]);
         System.out.println(String[].class.getSuperclass());
     }
 
-    private static void test_singleton(){
+    private static void test_singleton() {
         Service myService = new Service();
         FileLogger l1 = myService.do_something_and_log();
         FileLogger l2 = myService.do_something_else_and_log();
         System.out.println(l1.equals(l2));
     }
 
-    private static void test_composite(){
+    private static void test_composite() {
         PricedComponent myInstrument = new FinancialInstrument();
         System.out.println(myInstrument.getPrice());
 
         Portfolio myPortfolio = new Portfolio(new ArrayList<PricedComponent>());
 
-        for (int i=0; i < 10; i++) {
+        for (int i = 0; i < 10; i++) {
             myPortfolio.addInstrument(new FinancialInstrument());
         }
 
         System.out.println(myPortfolio.getPrice());
     }
 
-    private static void test_strategy(){
+    private static void test_strategy() {
         Panel myPanel = new Panel();
 
         myPanel.setDrawingStrategy(new RedBackground());
@@ -86,7 +91,7 @@ public class Main {
         myPanel.drawBackground();
     }
 
-    private static void test_abstract_factory(){
+    private static void test_abstract_factory() {
         PizzaStore testStore = new NYPizzaStore();
         Pizza pizza = testStore.orderPizza("cheese");
         System.out.println("Ethan from New York ordered a " + pizza.getName() + "\n");
@@ -96,7 +101,7 @@ public class Main {
         System.out.println("Joel from Texas ordered a " + pizza.getName() + "\n");
     }
 
-    private static void test_factory(){
+    private static void test_factory() {
         /*
          * Hersteller Volkswagen und BMW instanziieren
          */
@@ -122,14 +127,31 @@ public class Main {
 
     }
 
-
-
-    private static void test_builder(){
+    private static void test_builder() {
         Person person = new Person.Builder("Ada", "Lovelace", Person.Sex.FEMALE)
                 .profession("mathematician")
                 .birthday(LocalDate.of(1815, 12, 10))
                 .build();
 
         System.out.println(person.toString());
+    }
+
+    private static void test_observer() {
+        WeatherData weatherData = new WeatherData();
+
+        // first observer
+        CurrentConditionsDisplay currentConditionsDisplay = new CurrentConditionsDisplay(weatherData);
+        weatherData.showObserversLenght();
+        weatherData.setMeasurements(80, 65, 30.4f);
+
+        // second observer
+        StatisticsDisplay statisticsDisplay = new StatisticsDisplay(weatherData);
+        weatherData.showObserversLenght();
+        weatherData.setMeasurements(82, 70, 29.2f);
+
+        // third observer
+        ForecastDisplay forecastDisplay = new ForecastDisplay(weatherData);
+        weatherData.showObserversLenght();
+        weatherData.setMeasurements(78, 90, 29.2f);
     }
 }
