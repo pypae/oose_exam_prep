@@ -1,3 +1,7 @@
+import abstractfactory.ChicagoPizzaStore;
+import abstractfactory.NYPizzaStore;
+import abstractfactory.PizzaStore;
+import abstractfactory.pizza.Pizza;
 import adapter.PeekIterator;
 import adapter.Peekerator;
 import composite.FinancialInstrument;
@@ -20,22 +24,22 @@ public class Main {
         test_strategy();
         test_singleton();
         test_adapter();
+        test_abstract_factory();
     }
 
     private static void test_adapter() {
-        List<Integer> myList = new ArrayList<>() {{
-            add(1);
-            add(2);
-            add(3);
-        }};
-
-        ListIterator<Integer> iterator = myList.listIterator();
-        Peekerator<Integer> peekerator = new PeekIterator<Integer>(iterator);
-
-        System.out.println(peekerator.peek()); // 1
-        System.out.println(iterator.next()); // 1
-        System.out.println(peekerator.peek()); // 2
-
+//        List<Integer> myList = new ArrayList<>() {{
+//            add(1);
+//            add(2);
+//            add(3);
+//        }};
+//
+//        ListIterator<Integer> iterator = myList.listIterator();
+//        Peekerator<Integer> peekerator = new PeekIterator<Integer>(iterator);
+//
+//        System.out.println(peekerator.peek()); // 1
+//        System.out.println(iterator.next()); // 1
+//        System.out.println(peekerator.peek()); // 2
     }
 
     private static void test_covariance(){
@@ -72,6 +76,16 @@ public class Main {
 
         myPanel.setDrawingStrategy(new YellowBackground());
         myPanel.drawBackground();
+    }
+
+    private static void test_abstract_factory(){
+        PizzaStore testStore = new NYPizzaStore();
+        Pizza pizza = testStore.orderPizza("cheese");
+        System.out.println("Ethan from New York ordered a " + pizza.getName() + "\n");
+
+        testStore = new ChicagoPizzaStore();
+        pizza = testStore.orderPizza("cheese");
+        System.out.println("Joel from Texas ordered a " + pizza.getName() + "\n");
     }
 
 
