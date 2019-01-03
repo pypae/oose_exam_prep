@@ -4,6 +4,7 @@ import abstractfactory.PizzaStore;
 import abstractfactory.pizza.Pizza;
 import adapter.PeekIterator;
 import adapter.Peekerator;
+import bridge.*;
 import composite.FinancialInstrument;
 import composite.Portfolio;
 import composite.PricedComponent;
@@ -30,6 +31,7 @@ public class Main {
         test_adapter();
         test_abstract_factory();
         test_factory();
+        test_bridge();
     }
 
     private static void test_adapter() {
@@ -116,8 +118,14 @@ public class Main {
                             fahrzeug.getModell() + ", " +
                             fahrzeug.getKw() + " KW");
         }
-
     }
 
+    private static void test_bridge(){
+        System.out.println();
+        Shape tri = new Triangle(new RedColor());
+        tri.applyColor();
 
+        Shape pent = new Pentagon(new GreenColor());
+        pent.applyColor();
+    }
 }
