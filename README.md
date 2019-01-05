@@ -73,6 +73,7 @@ foo[0] = new Object(); // ArrayStoreException at runtime
 ```
 
 Das Gegenprinzip heisst Kontravarianz; In einer überschriebenen Methode wird ein Parameter offener deklariert.
+
 __4. Erklären Sie die SOLID Prinzipien.__
 *Aus Prüfungsprotokoll 2016*
 
